@@ -2,7 +2,6 @@
   "name": "sthg-web",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://aanganggriawan95/github.io/FE-sthg-web",
   "type": "module",
   "scripts": {
     "dev": "vite",
