@@ -6,7 +6,20 @@ export default {
     "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      scale: {
+        110: "1.10",
+      },
+      keyframes: {
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
+      animation: {
+        scroll: "scroll 10s linear infinite",
+      },
+    },
   },
   plugins: [require("flowbite/plugin")],
 };

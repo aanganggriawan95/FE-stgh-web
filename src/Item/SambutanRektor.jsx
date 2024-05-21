@@ -1,6 +1,6 @@
 const Sambutan_Rektor = () => {
   return (
-    <div className="w-full bg-[#474747] flex h-screen items-center justify-center gap-4 overflow-hidden">
+    <div className=" bg-[#474747] lg:flex items-center justify-center gap-4 overflow-hidden w-full ">
       <div className="w-full">
         <img
           className="w-full overflow-hidden"
@@ -8,9 +8,11 @@ const Sambutan_Rektor = () => {
           alt=""
         />
       </div>
-      <article className="w-full flex flex-col gap-4 justify-center text-white">
-        <h1 className="text-3xl text-center font-bold pb-4">Sambutan Rektor</h1>
-        <p className="px-8 text-xl">
+      <article className="w-full flex flex-col gap-4 justify-center text-white md:py-8">
+        <h1 className="pt-8 md:pt-0 text-3xl text-center font-bold pb-4">
+          Sambutan Rektor
+        </h1>
+        <p className="pb-10 md:pb-0 px-8 text-xl">
           Selamat datang di official website. Universitas Pasundan merupakan
           perguruan tinggi yang berada di bawah yayasan Pendidikan Tinggi (YPT)
           14 November 1960 dah hingga saat ini telah menghasikan lebih dari 70

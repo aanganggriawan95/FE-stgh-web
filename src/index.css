@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.scroll-animation {
+  animation: scroll 20s linear infinite;
+}
+
+#navbar a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: white;
+  transition: width 0.4s ease;
+}
+
+#navbar a:hover::after {
+  width: 100%;
+}
