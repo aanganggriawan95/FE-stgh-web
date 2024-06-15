@@ -10,6 +10,9 @@ export default {
       scale: {
         110: "1.10",
       },
+      textAlign: {
+        justify: "justify",
+      },
       keyframes: {
         scroll: {
           "0%": { transform: "translateX(0)" },

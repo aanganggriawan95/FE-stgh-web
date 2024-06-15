@@ -6,70 +6,66 @@ const data = [
       "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
-    id: 1,
+    id: 2,
     judul: "Noteworthy technology acquisitions 2021",
     deskripsi:
       "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
-    id: 1,
+    id: 3,
     judul: "Noteworthy technology acquisitions 2021",
     deskripsi:
       "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
-    id: 1,
+    id: 4,
     judul: "Noteworthy technology acquisitions 2021",
     deskripsi:
       "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
-    id: 1,
+    id: 5,
     judul: "Noteworthy technology acquisitions 2021",
     deskripsi:
       "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
-    id: 1,
+    id: 6,
     judul: "Noteworthy technology acquisitions 2021",
     deskripsi:
       "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
-    id: 1,
+    id: 7,
     judul: "Noteworthy technology acquisitions 2021",
     deskripsi:
       "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
-    id: 1,
+    id: 8,
     judul: "Noteworthy technology acquisitions 2021",
     deskripsi:
       "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
-    id: 1,
+    id: 9,
     judul: "Noteworthy technology acquisitions 2021",
     deskripsi:
       "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
-    id: 1,
+    id: 10,
     judul: "Noteworthy technology acquisitions 2021",
     deskripsi:
       "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
 ];
+import JudulInformasi from "./judulInformasi";
 const Berita = () => {
   return (
-    <section className="px-5 md:mx-10">
-      <div className="flex justify-center">
-        <h1 className="font-bold text-3xl md:text-4xl pt-16 text-center">
-          Berita Universitas <br />
-          <span>---------------</span>
-        </h1>
-      </div>
-      <div className="w-full">
+    <section className="px-5 md:px-10">
+      <JudulInformasi title={"BERITA UNIVERSITAS"} />
+      <div className="">
         <div id="berita" className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {data.slice(0, 6).map((item, index) => (
             <div

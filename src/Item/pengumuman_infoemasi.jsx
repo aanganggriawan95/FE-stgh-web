@@ -3,10 +3,12 @@ const PengumumanInformasi = () => {
     <section>
       <div>
         <div className="bg-yellow-300 w-full">
-          <h1 className="text-3xl py-2 md:text-4xl font-bold text-white text-center md:py-16 ">
-            Pengumuman & Informasi <br />
-            <span>-------------------</span>
-          </h1>
+          <div className="flex justify-center w-full items-center relative py-14 md:py-20">
+            <span className="w-full h-1 md:h-[2px] bg-white"></span>
+            <h1 className="font-bold absolute text-lg md:text-xl text-center bg-white p-2 border-2 px-4 text-black">
+              PENGUMUMAN & INFORMASI
+            </h1>
+          </div>
           <div className="pb-4 px-10 md:pb-16 cursor-pointer">
             <img
               src="/public/gambar/banner_PMB.jpg"

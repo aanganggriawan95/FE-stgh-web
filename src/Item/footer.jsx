@@ -143,7 +143,7 @@ const Footer = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:col-span-2">
-            <div className="text-start md:text-center sm:text-left">
+            <div className="text-start md:text-start sm:text-left">
               <p className="text-lg font-medium text-white">Quick Link</p>
 
               <ul className="mt-8 space-y-4 text-sm">
@@ -201,7 +201,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="text-start md:text-center sm:text-left  ">
+            <div className="text-start md:text-start sm:text-start  ">
               <p className="text-lg font-medium text-white">
                 Lembaga Universitas
               </p>

@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import "flowbite";
 import "animate.css";
 
@@ -17,11 +16,43 @@ export default function CaroselBagian2() {
           data-carousel-item
         >
           <div className="w-1/2">
-            <img
-              src="/public/gambar/jokowi.jpg"
-              alt=""
-              className="  rounded-full"
-            />
+            <img src="/gambar/jokowi.jpg" alt="" className="  rounded-full" />
+          </div>
+          <div className="w-full md:flex md:flex-col gap-2">
+            <h1 className="font-bold text-3xl text-red-600">Pimpinan</h1>
+            <h1 className="text-xl font-semibold">Prof.Dr.H.Azhar Alfandi</h1>
+            <h1 className="text-xl font-semibold">SE.,M.SC</h1>
+            <h1>
+              Wakil Rektor Bidang Akademik, Kemahasiswaan, Alumni, Agama dan
+              Budaya
+            </h1>
+          </div>
+        </div>
+        {/* <!-- Item 1 --> */}
+        <div
+          className="bg-slate-300 border flex flex-col md:flex-row md:px-10 md:gap-8 h-full items-center justify-center  text-center md:text-start duration-700 ease-in-out"
+          data-carousel-item
+        >
+          <div className="w-1/2">
+            <img src="/gambar/hbb.png" alt="" className="  rounded-full" />
+          </div>
+          <div className="w-full md:flex md:flex-col gap-2">
+            <h1 className="font-bold text-3xl text-red-600">Pimpinan</h1>
+            <h1 className="text-xl font-semibold">Prof.Dr.H.Azhar Alfandi</h1>
+            <h1 className="text-xl font-semibold">SE.,M.SC</h1>
+            <h1>
+              Wakil Rektor Bidang Akademik, Kemahasiswaan, Alumni, Agama dan
+              Budaya
+            </h1>
+          </div>
+        </div>
+        {/* <!-- Item 1 --> */}
+        <div
+          className="bg-slate-300 border flex flex-col md:flex-row md:px-10 md:gap-8 h-full items-center justify-center  text-center md:text-start duration-700 ease-in-out"
+          data-carousel-item
+        >
+          <div className="w-1/2">
+            <img src="/gambar/jokowi.jpg" alt="" className="  rounded-full" />
           </div>
           <div className="w-full md:flex md:flex-col gap-2">
             <h1 className="font-bold text-3xl text-red-600">Pimpinan</h1>
@@ -88,9 +119,9 @@ export default function CaroselBagian2() {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M5 1 1 5l4 4"
             />
           </svg>
@@ -112,9 +143,9 @@ export default function CaroselBagian2() {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="m1 9 4-4-4-4"
             />
           </svg>

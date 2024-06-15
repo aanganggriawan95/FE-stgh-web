@@ -28,15 +28,11 @@ const data = [
     img: "https://images.unsplash.com/photo-1715358214370-d6ac2c00aa18?q=80&w=1898&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
+import JudulInformasi from "./judulInformasi";
 const KegiatanUniv = () => {
   return (
     <section className="px-5 md:px-10">
-      <div>
-        <h1 className="font-bold text-3xl md:text-4xl pt-16 text-center">
-          Kegiatan Universitas <br />
-          <span>-------------------</span>
-        </h1>
-      </div>
+      <JudulInformasi title={"KEGIATAN UNIVERSITAS"} />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
         {data.slice(0, 6).map((item, index) => (
           <div key={item.id} className="h-60 relative overflow-hidden group">
