@@ -1,157 +1,99 @@
 import "flowbite";
 import "animate.css";
+import React, { useState, useEffect } from "react";
+import { Button } from "primereact/button";
+import { Carousel } from "primereact/carousel";
+import { Tag } from "primereact/tag";
+import { ProductService } from "../Servis/ProductService";
 
-export default function CaroselBagian2() {
+export default function CircularDemo() {
+  const [products, setProducts] = useState([]);
+  const responsiveOptions = [
+    {
+      breakpoint: "1400px",
+      numVisible: 1,
+      numScroll: 1,
+    },
+    {
+      breakpoint: "1199px",
+      numVisible: 1,
+      numScroll: 1,
+    },
+    {
+      breakpoint: "767px",
+      numVisible: 1,
+      numScroll: 1,
+    },
+    {
+      breakpoint: "575px",
+      numVisible: 1,
+      numScroll: 1,
+    },
+  ];
+
+  const getSeverity = (product) => {
+    switch (product.inventoryStatus) {
+      case "INSTOCK":
+        return "success";
+
+      case "LOWSTOCK":
+        return "warning";
+
+      case "OUTOFSTOCK":
+        return "danger";
+
+      default:
+        return null;
+    }
+  };
+
+  useEffect(() => {
+    ProductService.getProductsSmall().then((data) =>
+      setProducts(data.slice(0, 9))
+    );
+  }, []);
+
+  const productTemplate = (product) => {
+    return (
+      <div className="border-1 surface-border m-2 text-center py-10 px-3 md:px-0 h-[500px] w-auto md:w-full flex flex-col md:flex-row ">
+        <div className="mb-3  w-1/2 flex  items-center justify-center  ">
+          <img
+            src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`}
+            alt={product.name}
+            className="shadow-2 rounded-full h-full w-[70%] object-cover"
+          />
+        </div>
+        <div className="w-1/2">
+          <h4 className="mb-1">{product.name}</h4>
+          <h6 className="mt-0 mb-3">${product.price}</h6>
+          <Tag
+            value={product.inventoryStatus}
+            severity={getSeverity(product)}
+          ></Tag>
+          <div className="mt-5 flex flex-wrap gap-2 justify-content-center">
+            <Button icon="pi pi-search" className="p-button p-button-rounded" />
+            <Button
+              icon="pi pi-star-fill"
+              className="p-button-success p-button-rounded bg-white"
+            />
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <div
-      id="default-carousel"
-      className="relative w-full"
-      data-carousel="slide"
-    >
-      {/* <!-- Carousel wrapper --> */}
-      <div className=" relative h-[600px] md:h-96 lg:h-screen overflow-hidden">
-        {/* <!-- Item 1 --> */}
-        <div
-          className="bg-slate-300 border flex flex-col md:flex-row md:px-10 md:gap-8 h-full items-center justify-center  text-center md:text-start duration-700 ease-in-out"
-          data-carousel-item
-        >
-          <div className="w-1/2">
-            <img src="/gambar/jokowi.jpg" alt="" className="  rounded-full" />
-          </div>
-          <div className="w-full md:flex md:flex-col gap-2">
-            <h1 className="font-bold text-3xl text-red-600">Pimpinan</h1>
-            <h1 className="text-xl font-semibold">Prof.Dr.H.Azhar Alfandi</h1>
-            <h1 className="text-xl font-semibold">SE.,M.SC</h1>
-            <h1>
-              Wakil Rektor Bidang Akademik, Kemahasiswaan, Alumni, Agama dan
-              Budaya
-            </h1>
-          </div>
-        </div>
-        {/* <!-- Item 1 --> */}
-        <div
-          className="bg-slate-300 border flex flex-col md:flex-row md:px-10 md:gap-8 h-full items-center justify-center  text-center md:text-start duration-700 ease-in-out"
-          data-carousel-item
-        >
-          <div className="w-1/2">
-            <img src="/gambar/hbb.png" alt="" className="  rounded-full" />
-          </div>
-          <div className="w-full md:flex md:flex-col gap-2">
-            <h1 className="font-bold text-3xl text-red-600">Pimpinan</h1>
-            <h1 className="text-xl font-semibold">Prof.Dr.H.Azhar Alfandi</h1>
-            <h1 className="text-xl font-semibold">SE.,M.SC</h1>
-            <h1>
-              Wakil Rektor Bidang Akademik, Kemahasiswaan, Alumni, Agama dan
-              Budaya
-            </h1>
-          </div>
-        </div>
-        {/* <!-- Item 1 --> */}
-        <div
-          className="bg-slate-300 border flex flex-col md:flex-row md:px-10 md:gap-8 h-full items-center justify-center  text-center md:text-start duration-700 ease-in-out"
-          data-carousel-item
-        >
-          <div className="w-1/2">
-            <img src="/gambar/jokowi.jpg" alt="" className="  rounded-full" />
-          </div>
-          <div className="w-full md:flex md:flex-col gap-2">
-            <h1 className="font-bold text-3xl text-red-600">Pimpinan</h1>
-            <h1 className="text-xl font-semibold">Prof.Dr.H.Azhar Alfandi</h1>
-            <h1 className="text-xl font-semibold">SE.,M.SC</h1>
-            <h1>
-              Wakil Rektor Bidang Akademik, Kemahasiswaan, Alumni, Agama dan
-              Budaya
-            </h1>
-          </div>
-        </div>
-      </div>
-      {/* <!-- Slider indicators --> */}
-      <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-        <button
-          type="button"
-          className="w-3 h-3 rounded-full"
-          aria-current="true"
-          aria-label="Slide 1"
-          data-carousel-slide-to="0"
-        ></button>
-        <button
-          type="button"
-          className="w-3 h-3 rounded-full"
-          aria-current="false"
-          aria-label="Slide 2"
-          data-carousel-slide-to="1"
-        ></button>
-        <button
-          type="button"
-          className="w-3 h-3 rounded-full"
-          aria-current="false"
-          aria-label="Slide 3"
-          data-carousel-slide-to="2"
-        ></button>
-        <button
-          type="button"
-          className="w-3 h-3 rounded-full"
-          aria-current="false"
-          aria-label="Slide 4"
-          data-carousel-slide-to="3"
-        ></button>
-        <button
-          type="button"
-          className="w-3 h-3 rounded-full"
-          aria-current="false"
-          aria-label="Slide 5"
-          data-carousel-slide-to="4"
-        ></button>
-      </div>
-      {/* <!-- Slider controls --> */}
-      <button
-        type="button"
-        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-prev
-      >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-          <svg
-            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 6 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M5 1 1 5l4 4"
-            />
-          </svg>
-          <span className="sr-only">Previous</span>
-        </span>
-      </button>
-      <button
-        type="button"
-        className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-next
-      >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-          <svg
-            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 6 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="m1 9 4-4-4-4"
-            />
-          </svg>
-          <span className="sr-only">Next</span>
-        </span>
-      </button>
+    <div className="card">
+      <Carousel
+        value={products}
+        numVisible={1}
+        numScroll={1}
+        responsiveOptions={responsiveOptions}
+        className="custom-carousel"
+        circular
+        autoplayInterval={3000}
+        itemTemplate={productTemplate}
+      />
     </div>
   );
 }

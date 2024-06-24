@@ -22,6 +22,9 @@ export default {
       animation: {
         scroll: "scroll 10s linear infinite",
       },
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [require("flowbite/plugin")],

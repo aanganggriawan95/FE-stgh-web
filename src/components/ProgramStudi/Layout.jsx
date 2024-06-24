@@ -2,16 +2,16 @@ import React from "react";
 import Navbar from "../Navbar";
 import Footer from "../../Item/footer";
 import Jumbotron from "../../Item/jumbotron";
-import BasicDemo from "./Stepper";
-import JumbotronKaprodi from "./JumbotronKaprodi";
-import Prospek from "./Prospek";
-import Kegiatan from "./KegiatanProdi";
+import BasicDemo from "./item/Stepper";
+import JumbotronKaprodi from "./item/JumbotronKaprodi";
+import Prospek from "./item/Prospek";
+import Kegiatan from "./item/KegiatanProdi";
 
-const Sarjana = () => {
+export const Layaout = ({ title }) => {
   return (
     <div>
       <Navbar />
-      <Jumbotron judul={"Program Studi Sarjana"} img={"/gambar/hukum.jpeg"} />
+      <Jumbotron judul={title} img={"/gambar/hukum.jpeg"} />
       <div class="flex justify-center py-4 bg-gradient-to-r from-slate-900 to-red-700">
         <a
           href="#"
@@ -28,20 +28,20 @@ const Sarjana = () => {
         </a>
         <a
           href="#"
-          class="rounded-md px-3 py-2 text-md font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          class="hidden md:block rounded-md px-3 py-2 text-md font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
         >
           Prospek Kelulusan
         </a>
         <a
           href="#"
-          class="rounded-md px-3 py-2 text-md font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          class="hidden md:block rounded-md px-3 py-2 text-md font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
         >
           Kegiatan
         </a>
       </div>
       <div>
-        <div className="px-10">
-          <h1 className="text-4xl font-bold text-center py-10">
+        <div className="px-6 md:px-10">
+          <h1 className="text-3xl font-bold text-center py-8">
             Tujuan Pendidikan
           </h1>
           <p className="text-justify text-lg">
@@ -69,20 +69,20 @@ const Sarjana = () => {
             vitae architecto quasi voluptates commodi ex praesentium eligendi
             consectetur distinctio ullam! Quaerat a consequuntur minus at.
           </p>
-          <div className="flex justify-between py-24">
+          <div className="flex flex-col gap-12 md:gap-0 md:flex-row  justify-between py-12 md:py-24">
             <div className="flex flex-col items-center justify-center gap-2">
-              <span className="text-6xl font-bold">97%</span>
+              <span className="text-7xl text-green-500 font-bold">97%</span>
               <span className="text-xl font-bold">
                 Lulusan / Wisuda per Tahun
               </span>
             </div>
             <div className="flex flex-col items-center justify-center gap-2">
-              <span className="text-6xl font-bold">+1500</span>
+              <span className="text-7xl text-green-500 font-bold">+1500</span>
 
               <span className="text-xl font-bold">Penerimaan Mahasiswa</span>
             </div>
             <div className="flex flex-col items-center justify-center gap-2">
-              <span className="text-6xl font-bold">62%</span>
+              <span className="text-7xl text-green-500 font-bold">62%</span>
 
               <span className="text-xl font-bold">
                 Berkarir di Pemerintahan
@@ -100,4 +100,4 @@ const Sarjana = () => {
   );
 };
 
-export default Sarjana;
+export default Layaout;

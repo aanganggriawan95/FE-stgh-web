@@ -8,27 +8,29 @@
 
 const Footer = () => {
   return (
-    <footer className=" bg-slate-800">
-      <div className="mx-auto max-w-screen-xl pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
-        <div className="grid px-4 grid-cols-1 gap-8 lg:grid-cols-3 pb-4 ">
-          <div className="flex flex-col gap-8">
-            <div className="flex justify-center items-center text-teal-600 sm:justify-start gap-3">
-              <img src="/public/gambar/logo_sthg.png" alt="" className="w-20" />
+    <footer className=" bg-slate-900  ">
+      <div className="mx-auto pb-6 sm:px-6 lg:px-8 ">
+        <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col p-8 gap-8 w-[50%]">
+            <div className="flex justify-center items-center  text-teal-600 sm:justify-start gap-3">
+              <img src="/gambar/logo_sthg.png" alt="" className="w-20" />
               <h1 className="text-3xl font-bold">STHG</h1>
             </div>
             <div>
-              <h1 className="text-lg font-bold text-white">
+              <h1 className="text-lg font-bold text-white py-3">
                 Rektorat Universitas Pasundan
               </h1>
-              <p className="text-white">Email : humas@unpas.ac.id</p>
-              <p className="text-white">Telepon : 622-2021440</p>
-              <p className="text-white">Fax : 622-2021440</p>
-              <p className="text-white">
-                Alamat : Jl. Tamansari No.6-8 Kota Tasikmalaya
-              </p>
+              <div className="flex flex-col gap-2">
+                <p className="text-white">Email : humas@unpas.ac.id</p>
+                <p className="text-white">Telepon : 622-2021440</p>
+                <p className="text-white">Fax : 622-2021440</p>
+                <p className="text-white">
+                  Alamat : Jl. Tamansari No.6-8 Kota Tasikmalaya
+                </p>
+              </div>
             </div>
 
-            <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
+            <ul className="mt-4 flex justify-center gap-6 sm:justify-start md:gap-8">
               <li>
                 <a
                   href="#"
@@ -142,9 +144,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:col-span-2">
-            <div className="text-start md:text-start sm:text-left">
-              <p className="text-lg font-medium text-white">Quick Link</p>
+          <div className="flex justify-center w-full p-8">
+            <div className="text-start md:text-start sm:text-left w-1/2">
+              <p className="text-lg font-medium text-white  border-b-4 w-1/2 border-red-700">
+                Quick Link
+              </p>
 
               <ul className="mt-8 space-y-4 text-sm">
                 <li>
@@ -202,7 +206,7 @@ const Footer = () => {
             </div>
 
             <div className="text-start md:text-start sm:text-start  ">
-              <p className="text-lg font-medium text-white">
+              <p className="text-lg font-medium text-white  border-b-4  border-red-700">
                 Lembaga Universitas
               </p>
 
@@ -247,7 +251,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-red-700 to-black border-t py-6  absolute w-full start-0 ">
+        <div className="bg-gradient-to-r  from-red-700 to-black  py-6  absolute w-full start-0 ">
           <div className="text-center sm:flex sm:justify-between sm:text-left">
             <p className="text-sm text-gray-500">
               <span className="block sm:inline text-white">

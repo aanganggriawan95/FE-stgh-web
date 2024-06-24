@@ -65,22 +65,22 @@ const Kerjasama = () => {
   return (
     <section className="px-5 md:px-10 pb-8">
       <div>
-        <JudulInformasi title={"KEGIATAN UNIVERSITAS"} />
+        <JudulInformasi title={"KERJASAMA UNIVERSITAS"} />
         <div className="flex w-full pt-8 overflow-hidden">
           <div className="flex scroll-animation gap-2">
             {image.map((src, index) => (
-              <a
-                key={src.id}
-                href=""
-                className="w-40 h-44 md:w-80 block md:h-96"
-              >
-                <img
-                  key={index}
-                  src={src.img}
-                  alt={`Slide ${index}`}
-                  className="w-80 h-96 object-cover inline-block rounded-lg"
-                />
-              </a>
+              <div className="w-[450px] h-[450px] max-w-sm relative bg-transparent border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <a href="#" className="absolute w-full h-full cursor-pointer">
+                  <img
+                    className="w-full h-[100%] rounded-t-lg "
+                    src={src.img}
+                    alt="product image"
+                  />
+                </a>
+                <span className="bottom-0 absolute px-6 py-4 text-white w-full border border-black text-center bg-red-700">
+                  Sekolah Tinggi Teknologi Cipasung
+                </span>
+              </div>
             ))}
           </div>
         </div>

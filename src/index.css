@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 @keyframes scroll {
   0% {
@@ -15,7 +16,7 @@
 }
 
 .scroll-animation {
-  animation: scroll 20s linear infinite;
+  animation: scroll 60s linear infinite;
 }
 
 #navbar ul li:after {

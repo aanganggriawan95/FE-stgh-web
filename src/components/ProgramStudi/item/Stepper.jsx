@@ -2,15 +2,12 @@ import React, { useRef } from "react";
 import { Stepper } from "primereact/stepper";
 import { StepperPanel } from "primereact/stepperpanel";
 import { Button } from "primereact/button";
-import "primereact/resources/themes/saga-blue/theme.css"; // Tema PrimeReact
-import "primereact/resources/primereact.min.css"; // Gaya dasar PrimeReact
-import "primeicons/primeicons.css";
 
 export default function BasicDemo() {
   const stepperRef = useRef(null);
 
   return (
-    <div className="card flex flex-col justify-content-center justify-center mx-10">
+    <div className="card flex flex-col justify-content-center justify-center md:mx-10">
       <h1 className="text-3xl font-bold text-center py-8">Matakuliah</h1>
       <Stepper ref={stepperRef} style={{ flexBasis: "100%" }}>
         <StepperPanel header="Semester I & II">
