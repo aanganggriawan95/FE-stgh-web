@@ -18,7 +18,7 @@ const Home = () => {
         <CircularDemo />
       </div>
       <PengumumanInformasi />
-      <Berita />
+      <Berita item={true} />
       <div className="bg-slate-100">
         <KegiatanUniv />
       </div>

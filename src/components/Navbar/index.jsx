@@ -1,13 +1,14 @@
 import "animate.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import Home from "./Home";
+import Profile from "./Profile";
+import { ProgramStudi } from "./ProgramStudi";
+import PMB from "./PMB";
+import Akademik from "./Akademik";
 
 const Navbar = () => {
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 768);
-  const [blackSpot, setBlackSpot] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [openDrop, setOpenDrop] = useState(false);
-  const [openDropStudi, setOpenDropStudi] = useState(false);
-  const [openDropTentang, setOpenDropTentang] = useState(false);
+
   const Click = () => {
     setIsOpen(!isOpen);
     const content = document.getElementById("blackspot");
@@ -19,38 +20,6 @@ const Navbar = () => {
   //   dropdownMenu.classList.toggle("hidden");
   //   dropdownMenu.classList.toggle("animate__fadeInDown");
   // };
-  useEffect(() => {
-    const handleResize = () => {
-      setIsLargeScreen(window.innerWidth > 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const handleMouseEnter = ({ id, state }) => {
-    const dropdownIcon = document.getElementById(id);
-    if (isLargeScreen) {
-      state(true);
-    }
-    dropdownIcon.classList.add("md:rotate-180");
-  };
-
-  const handleMouseLeave = ({ id, state }) => {
-    const dropdownIcon = document.getElementById(id);
-    if (isLargeScreen) {
-      state(false);
-    }
-    dropdownIcon.classList.remove("md:rotate-180");
-  };
-
-  const heandledropOnClick = ({ idIcon, idDropdown, state }) => {
-    const dropdownIcon = document.getElementById(idIcon);
-    state((prevState) => !prevState);
-    const dropdownMenu = document.getElementById(idDropdown);
-    dropdownMenu.classList.toggle("hidden");
-    dropdownIcon.classList.toggle("rotate-180");
-  };
 
   window.addEventListener("scroll", function () {
     const navbar1 = document.getElementById("navbar1");
@@ -70,26 +39,6 @@ const Navbar = () => {
     }
   });
 
-  const heandleDropdownMouseEnter = ({ id, idDrop, state }) => {
-    const downMenu = document.getElementById(idDrop);
-    downMenu.classList.remove("top-[50%]", "opacity-0");
-    downMenu.classList.add("top-[100%]");
-    const dropdownIcon = document.getElementById(id);
-    if (isLargeScreen) {
-      state(true);
-    }
-    dropdownIcon.classList.add("md:rotate-180");
-  };
-  const heandleDropdownMouseLeave = ({ id, idDrop, state }) => {
-    const downMenu = document.getElementById(idDrop);
-    downMenu.classList.add("top-[0]", "opacity-0");
-    downMenu.classList.remove("top-[100%]");
-    const dropdownIcon = document.getElementById(id);
-    if (isLargeScreen) {
-      state(false);
-    }
-    dropdownIcon.classList.remove("md:rotate-180");
-  };
   return (
     <nav className="top-0 font-sans dark:bg-gray-900 fixed w-full z-50 transition-transform animate__animated animate__fadeInDown">
       {/* Hide */}
@@ -104,7 +53,7 @@ const Navbar = () => {
         <div className="flex gap-6 py-3 text-sm">
           <span className="text-yellow-300 flex">
             <svg
-              class="w-6 h-6 text-yellow-300 dark:text-white"
+              className="w-6 h-6 text-yellow-300 dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -114,9 +63,9 @@ const Navbar = () => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M18.427 14.768 17.2 13.542a1.733 1.733 0 0 0-2.45 0l-.613.613a1.732 1.732 0 0 1-2.45 0l-1.838-1.84a1.735 1.735 0 0 1 0-2.452l.612-.613a1.735 1.735 0 0 0 0-2.452L9.237 5.572a1.6 1.6 0 0 0-2.45 0c-3.223 3.2-1.702 6.896 1.519 10.117 3.22 3.221 6.914 4.745 10.12 1.535a1.601 1.601 0 0 0 0-2.456Z"
               />
             </svg>
@@ -242,9 +191,9 @@ const Navbar = () => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M1 1h15M1 7h15M1 13h15"
             />
           </svg>
@@ -287,10 +236,15 @@ const Navbar = () => {
             id="navbar"
             className="font-medium  md:h-full flex flex-col gap-6 md:gap-0  md:items-center md:p-0 mt-8 rounded-lg  md:flex-row md:flex-wrap  rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
           >
-            <li className="flex items-center px-5 ">
-              <div className="flex items-center px-3 md:px-0 gap-2">
+            <Home />
+            <Profile />
+            <ProgramStudi />
+            <PMB />
+            <Akademik />
+            <li className="px-5  md:h-full md:flex md:items-center relative">
+              <div className="flex px-3 md:px-0 items-center">
                 <svg
-                  className="w-6 h-6 text-gray-800 dark:text-white md:hidden "
+                  className="w-6 h-6 text-gray-800 dark:text-white md:hidden"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -303,313 +257,11 @@ const Navbar = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"
-                  />
-                </svg>
-
-                <a
-                  href="/"
-                  className="block text-md py-2 border  text-black rounded md:text-white  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  HOME
-                </a>
-              </div>
-            </li>
-            <li
-              id="liDropdown"
-              onMouseEnter={() =>
-                heandleDropdownMouseEnter({
-                  id: "dropdownIcon",
-                  idDrop: "dropdownMenu",
-                  state: setOpenDrop,
-                })
-              }
-              onMouseLeave={() =>
-                heandleDropdownMouseLeave({
-                  id: "dropdownIcon",
-                  idDrop: "dropdownMenu",
-                  state: setOpenDrop,
-                })
-              }
-              onClick={() =>
-                heandledropOnClick({
-                  idIcon: "dropdownIcon",
-                  idDropdown: "dropdownMenu",
-                  state: setOpenDrop,
-                })
-              }
-              className={`px-5  md:h-full md:flex md:items-center relative`}
-            >
-              <div className="flex md:gap-2 items-center justify-between pr-2">
-                <div className="flex w-full justify-between">
-                  <div className="flex items-center mx-3 md:px-0">
-                    <svg
-                      className="w-6 h-6 text-gray-800 dark:text-white md:hidden"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M6 4h12M6 4v16M6 4H5m13 0v16m0-16h1m-1 16H6m12 0h1M6 20H5M9 7h1v1H9V7Zm5 0h1v1h-1V7Zm-5 4h1v1H9v-1Zm5 0h1v1h-1v-1Zm-3 4h2a1 1 0 0 1 1 1v4h-4v-4a1 1 0 0 1 1-1Z"
-                      />
-                    </svg>
-                    <a
-                      id="dropdownButton"
-                      data-dropdown-toggle="dropdown"
-                      href="#"
-                      className=" py-2 px-3 flex items-center h-full  text-black md:text-white rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                    >
-                      PROFIL
-                    </a>
-                  </div>
-                  <svg
-                    id="dropdownIcon"
-                    className="w-6 h-6 text-black md:text-white transition-all duration-200 ease-in-out"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="m19 9-7 7-7-7"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div
-                id="dropdownMenu"
-                className={` rounded-sm hidden md:block  bg-white shadow-2xl md:absolute top-[50%] opacity-0  divide-y divide-gray-100 w-full md:w-56  dark:bg-gray-700 transition-all duration-300 ease-in-out`}
-              >
-                <ul
-                  className=" text-sm mx-4 md:mx-0 text-gray-700 dark:text-gray-200 "
-                  aria-labelledby="dropdownButton"
-                >
-                  <li>
-                    <a
-                      href="/profil/visi&misi"
-                      className="block px-4 py-2 text-sm  dark:hover:bg-gray-600 hover:text-red-700"
-                    >
-                      VISI MISI
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/profil/sejarah"
-                      className="block px-4 py-2 text-sm  dark:hover:bg-gray-600 hover:text-red-700"
-                    >
-                      TENTANG STHG
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/profil/pasilitas"
-                      className="block px-4 py-2 text-sm  dark:hover:bg-gray-600 hover:text-red-700"
-                    >
-                      FASILITAS
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/profil/akreditasi"
-                      className="block px-4 py-2 text-sm  dark:hover:bg-gray-600 hover:text-red-700"
-                    >
-                      AKREDITASI
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li
-              id="liDropdown"
-              onMouseEnter={() =>
-                heandleDropdownMouseEnter({
-                  id: "dropdownIconStudi",
-                  idDrop: "dropdownMenuPropil",
-                  state: setOpenDropStudi,
-                })
-              }
-              onMouseLeave={() =>
-                heandleDropdownMouseLeave({
-                  id: "dropdownIconStudi",
-                  idDrop: "dropdownMenuPropil",
-                  state: setOpenDropStudi,
-                })
-              }
-              onClick={() =>
-                heandledropOnClick({
-                  idIcon: "dropdownIconStudi",
-                  idDropdown: "dropdownMenuPropil",
-                  state: setOpenDropStudi,
-                })
-              }
-              className={` md:h-full md:flex md:items-center relative px-5 `}
-            >
-              <div className="flex items-center justify-between pr-2 md:gap-2 md:pr-0">
-                <div className="flex items-center mx-3 md:px-0">
-                  <svg
-                    class="w-6 h-6 text-gray-800 dark:text-white md:hidden"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 19V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v13H7a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h12M9 3v14m7 0v4"
-                    />
-                  </svg>
-                  <a
-                    id="dropdownButton"
-                    data-dropdown-toggle="dropdown"
-                    href="#"
-                    className=" py-2 px-3 md:px-0 flex items-center h-full  text-black md:text-white rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >
-                    PROGRAM STUDI
-                  </a>
-                </div>
-                <svg
-                  id="dropdownIconStudi"
-                  className="w-6 h-6 text-black md:text-white transition-all duration-200 ease-in-out"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m19 9-7 7-7-7"
-                  />
-                </svg>
-              </div>
-              <div
-                id="dropdownMenuPropil"
-                className={` rounded-sm hidden md:block  bg-white shadow-2xl md:absolute top-[50%] opacity-0  divide-y divide-gray-100 w-full md:w-56  dark:bg-gray-700 transition-all duration-300 ease-in-out`}
-              >
-                <ul
-                  className=" text-sm mx-4 md:mx-0 text-gray-700 dark:text-gray-200 "
-                  aria-labelledby="dropdownButton"
-                >
-                  <li>
-                    <a
-                      href="/studi/sarjana"
-                      className="block px-4 py-2 text-sm  dark:hover:bg-gray-600 hover:text-red-700"
-                    >
-                      SARJANA HUKUM
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/studi/master"
-                      className="block px-4 py-2 text-sm  dark:hover:bg-gray-600 hover:text-red-700"
-                    >
-                      MASTER HUKUM
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li className="px-5  md:h-full md:flex md:items-center relative">
-              <div className="flex px-3 md:px-0 items-center">
-                <svg
-                  class="w-6 h-6 text-gray-800 dark:text-white md:hidden"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5.005 11.19V12l6.998 4.042L19 12v-.81M5 16.15v.81L11.997 21l6.998-4.042v-.81M12.003 3 5.005 7.042l6.998 4.042L19 7.042 12.003 3Z"
-                  />
-                </svg>
-                <a
-                  href="#"
-                  className="block text-sm py-2 px-3 text-black md:text-white rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  PMB
-                </a>
-              </div>
-            </li>
-            <li className="px-5  md:h-full md:flex md:items-center relative">
-              <div className="flex px-3 md:px-0 items-center">
-                <svg
-                  class="w-6 h-6 text-gray-800 dark:text-white md:hidden"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m17 21-5-4-5 4V3.889a.92.92 0 0 1 .244-.629.808.808 0 0 1 .59-.26h8.333a.81.81 0 0 1 .589.26.92.92 0 0 1 .244.63V21Z"
-                  />
-                </svg>
-
-                <a
-                  href="#"
-                  className="block text-sm py-2 px-3 text-black md:text-white rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  AKADEMIK
-                </a>
-              </div>
-            </li>
-
-            <li className="px-5  md:h-full md:flex md:items-center relative">
-              <div className="flex px-3 md:px-0 items-center">
-                <svg
-                  class="w-6 h-6 text-gray-800 dark:text-white md:hidden"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
                     d="M14.079 6.839a3 3 0 0 0-4.255.1M13 20h1.083A3.916 3.916 0 0 0 18 16.083V9A6 6 0 1 0 6 9v7m7 4v-1a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1Zm-7-4v-6H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1Zm12-6h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v-6Z"
                   />
                 </svg>
                 <a
-                  href="#"
+                  href="/kontak"
                   className="block text-sm py-2 px-3 text-black md:text-white rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   KONTAK
@@ -618,7 +270,7 @@ const Navbar = () => {
             </li>
             <li className="px-5  md:h-full md:flex md:items-center relative">
               <a
-                href="#"
+                href="https://jurnal.sthg.ac.id/index.php/jurnal/index"
                 className="block text-sm py-2 px-3 md:px-0 text-white rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 E-JURNAL

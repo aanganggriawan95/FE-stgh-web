@@ -35,7 +35,10 @@ const KegiatanUniv = () => {
       <JudulInformasi title={"KEGIATAN UNIVERSITAS"} />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
         {data.slice(0, 6).map((item, index) => (
-          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div
+            key={index}
+            className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
             <a href="#">
               <img className="rounded-t-lg" src={item.img} alt="" />
             </a>
@@ -63,9 +66,9 @@ const KegiatanUniv = () => {
                 >
                   <path
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M1 5h12m0 0L9 1m4 4L9 9"
                   />
                 </svg>

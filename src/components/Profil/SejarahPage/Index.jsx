@@ -2,8 +2,9 @@ import Navbar from "../../Navbar";
 import Footer from "../../../Item/footer";
 import "flowbite";
 import Jumbotron from "../../../Item/jumbotron";
-
+import Statistik from "./Statistik";
 import FieldsetContent from "./Fealsheed";
+// import { useEffect, useRef, useState } from "react";
 const Sejarah = () => {
   return (
     <div className="font-sans">
@@ -45,9 +46,9 @@ const Sejarah = () => {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="m1 9 4-4-4-4"
                     />
                   </svg>
@@ -61,47 +62,7 @@ const Sejarah = () => {
 
           <br />
           <FieldsetContent />
-
-          <div className="flex flex-col items-center justify-center bg-gradient-to-r from-red-700 to-black text-white py-20 my-20">
-            <div className="flex flex-col items-center px-4 justify-center gap-2">
-              <h1 className="text-2xl lg:text-[30px]">Statistik STHG</h1>
-              <p className="text-center font-bold">
-                Sejak 1997, STT Cipasung telah berkarya di dunia pendidikan
-                teknologi di Tasikmalaya
-              </p>
-            </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 justify-center py-10">
-              <div className=" flex flex-col text-center">
-                <span className="text-[70px] font-semibold">2</span>
-                <span>Program Studi</span>
-                <span className="text-sm px-4">
-                  Program Studi Teknik Industri dan Informatika
-                </span>
-              </div>
-              <div className=" flex flex-col text-center">
-                <span className="text-[70px] font-semibold">16</span>
-                <span>Dosen Tetap</span>
-                <span className="px-4 text-sm">
-                  Dosen Tetap yang ber-homebase di STT Cipasung
-                </span>
-              </div>
-              <div className=" flex flex-col text-center">
-                <span className="text-[70px] font-semibold">535</span>
-                <span>Mahasiswa</span>
-                <span className="text-sm px-4">
-                  Mahasiswa seluruh angkatan di STT Cipasung
-                </span>
-              </div>
-              <div className=" flex flex-col text-center">
-                <span className="text-[70px] font-semibold">486</span>
-                <span>Alumni</span>
-                <span className="text-sm px-4">
-                  Lulusan STT Cipasung sejak berdiri tahun 1997 sampai 2018
-                </span>
-              </div>
-            </div>
-          </div>
-
+          <Statistik />
           <ol className="relative border-s md:px-10 border-gray-200 dark:border-gray-700">
             <div className="w-full">
               <li className="mb-10 mx-4 border-l-2 py-8 px-4 hover:border-l-red-700 lg:ml-[50%]">

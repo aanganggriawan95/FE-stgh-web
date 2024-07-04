@@ -7,7 +7,8 @@ import Akreditasi from "./components/Profil/AkreditasiPage/Index";
 import Sarjana from "./components/ProgramStudi/SarjanaPage/Index";
 import Master from "./components/ProgramStudi/MasterPage/Index";
 import VisiMisi from "./components/Profil/VisiMisi";
-
+import BeritaPage from "./components/Berita/Index";
+import Kontak from "./components/Kontak";
 function App() {
   return (
     <>
@@ -20,6 +21,8 @@ function App() {
           <Route path="/studi/sarjana" element={<Sarjana />} />
           <Route path="/studi/master" element={<Master />} />
           <Route path="/profil/visi&misi" element={<VisiMisi />} />
+          <Route path="/berita" element={<BeritaPage />} />
+          <Route path="/kontak" element={<Kontak />} />
         </Routes>
       </Router>
     </>

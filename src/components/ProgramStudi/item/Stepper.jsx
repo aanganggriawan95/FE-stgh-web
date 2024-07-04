@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Stepper } from "primereact/stepper";
 import { StepperPanel } from "primereact/stepperpanel";
 import { Button } from "primereact/button";
@@ -32,7 +32,7 @@ export default function BasicDemo() {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    Apple MacBook Pro 17"
+                    Apple MacBook Pro 17
                   </th>
                   <td className="px-6 py-4">Silver</td>
                   <td className="px-6 py-4">Laptop</td>
@@ -79,7 +79,7 @@ export default function BasicDemo() {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    Apple MacBook Pro 17"
+                    Apple MacBook Pro 17
                   </th>
                   <td className="px-6 py-4">Silver</td>
                   <td className="px-6 py-4">Laptop</td>
@@ -140,7 +140,7 @@ export default function BasicDemo() {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    Apple MacBook Pro 17"
+                    Apple MacBook Pro 17
                   </th>
                   <td className="px-6 py-4">Silver</td>
                   <td className="px-6 py-4">Laptop</td>
@@ -187,7 +187,7 @@ export default function BasicDemo() {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    Apple MacBook Pro 17"
+                    Apple MacBook Pro 17
                   </th>
                   <td className="px-6 py-4">Silver</td>
                   <td className="px-6 py-4">Laptop</td>
@@ -254,7 +254,7 @@ export default function BasicDemo() {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    Apple MacBook Pro 17"
+                    Apple MacBook Pro 17
                   </th>
                   <td className="px-6 py-4">Silver</td>
                   <td className="px-6 py-4">Laptop</td>
@@ -301,7 +301,7 @@ export default function BasicDemo() {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    Apple MacBook Pro 17"
+                    Apple MacBook Pro 17
                   </th>
                   <td className="px-6 py-4">Silver</td>
                   <td className="px-6 py-4">Laptop</td>
@@ -368,7 +368,7 @@ export default function BasicDemo() {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    Apple MacBook Pro 17"
+                    Apple MacBook Pro 17
                   </th>
                   <td className="px-6 py-4">Silver</td>
                   <td className="px-6 py-4">Laptop</td>
@@ -415,7 +415,7 @@ export default function BasicDemo() {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    Apple MacBook Pro 17"
+                    Apple MacBook Pro 17
                   </th>
                   <td className="px-6 py-4">Silver</td>
                   <td className="px-6 py-4">Laptop</td>

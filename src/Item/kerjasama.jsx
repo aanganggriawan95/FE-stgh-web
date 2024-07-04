@@ -69,7 +69,10 @@ const Kerjasama = () => {
         <div className="flex w-full pt-8 overflow-hidden">
           <div className="flex scroll-animation gap-2">
             {image.map((src, index) => (
-              <div className="w-[450px] h-[450px] max-w-sm relative bg-transparent border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+              <div
+                key={index}
+                className="w-[450px] h-[450px] max-w-sm relative bg-transparent border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+              >
                 <a href="#" className="absolute w-full h-full cursor-pointer">
                   <img
                     className="w-full h-[100%] rounded-t-lg "

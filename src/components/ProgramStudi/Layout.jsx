@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../Navbar";
 import Footer from "../../Item/footer";
 import Jumbotron from "../../Item/jumbotron";
@@ -7,34 +6,35 @@ import JumbotronKaprodi from "./item/JumbotronKaprodi";
 import Prospek from "./item/Prospek";
 import Kegiatan from "./item/KegiatanProdi";
 
+// eslint-disable-next-line react/prop-types
 export const Layaout = ({ title }) => {
   return (
     <div>
       <Navbar />
       <Jumbotron judul={title} img={"/gambar/hukum.jpeg"} />
-      <div class="flex justify-center py-4 bg-gradient-to-r from-slate-900 to-red-700">
+      <div className="flex justify-center py-4 bg-gradient-to-r from-slate-900 to-red-700">
         <a
           href="#"
-          class="rounded-md  px-3 py-2 text-md font-medium text-white"
+          className="rounded-md  px-3 py-2 text-md font-medium text-white"
           aria-current="page"
         >
           Tujuan Pendidikan
         </a>
         <a
           href="#"
-          class="rounded-md px-3 py-2 text-md font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          className="rounded-md px-3 py-2 text-md font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
         >
           Mata Kuliah
         </a>
         <a
           href="#"
-          class="hidden md:block rounded-md px-3 py-2 text-md font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          className="hidden md:block rounded-md px-3 py-2 text-md font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
         >
           Prospek Kelulusan
         </a>
         <a
           href="#"
-          class="hidden md:block rounded-md px-3 py-2 text-md font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          className="hidden md:block rounded-md px-3 py-2 text-md font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
         >
           Kegiatan
         </a>
