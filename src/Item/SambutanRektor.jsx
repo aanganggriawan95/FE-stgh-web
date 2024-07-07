@@ -34,17 +34,19 @@ const Sambutan_Rektor = () => {
       {data.map((item, index) => (
         <div key={index}>
           <JudulInformasi title={item.judul} />
-          <div className="bg-[#474747] lg:flex items-center justify-center gap-4 overflow-hidden w-full">
+          <div className="bg-slate-900 lg:flex items-center justify-center gap-4 overflow-hidden w-full">
             <div className="w-full">
               <img
                 className="w-full overflow-hidden"
-                src={`${item.foto}`}
+                src={item.foto}
                 alt="Gambar Rektor"
               />
             </div>
 
             <article className="w-full flex flex-col gap-4 justify-center text-white md:py-8">
-              <p className="pb-10 md:pb-0 px-8 text-xl">{item.sambutan}</p>
+              <p className="py-10 text-justify md:pb-0 px-8 text-xl">
+                {item.sambutan}
+              </p>
             </article>
           </div>
         </div>

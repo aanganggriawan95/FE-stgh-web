@@ -9,10 +9,13 @@ import Master from "./components/ProgramStudi/MasterPage/Index";
 import VisiMisi from "./components/Profil/VisiMisi";
 import BeritaPage from "./components/Berita/Index";
 import Kontak from "./components/Kontak";
+import DetailKegiatan from "./components/Home/DetailKegiatan";
+import ScrollToTop from "./Item/ScrollTop/Index";
 function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profil/sejarah" element={<Sejarah />} />
@@ -22,6 +25,7 @@ function App() {
           <Route path="/studi/master" element={<Master />} />
           <Route path="/profil/visi&misi" element={<VisiMisi />} />
           <Route path="/berita" element={<BeritaPage />} />
+          <Route path="/detailKegiatan/:id" element={<DetailKegiatan />} />
           <Route path="/kontak" element={<Kontak />} />
         </Routes>
       </Router>

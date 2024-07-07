@@ -8,16 +8,20 @@ import KegiatanUniv from "../../Item/kegiatanUniv";
 import Medsos from "../../Item/medsos";
 import Kerjasama from "../../Item/kerjasama";
 import Footer from "../../Item/footer";
+import MengapaSTHG from "../../Item/MengapaSTHG";
 const Home = () => {
   return (
     <div className="font-sans">
       <Navbar />
       <Carousel />
       <Sambutan_Rektor />
-      <div className="bg-slate-400">
+      <div className="bg-white">
         <CircularDemo />
       </div>
+
       <PengumumanInformasi />
+
+      <MengapaSTHG />
       <Berita item={true} />
       <div className="bg-slate-100">
         <KegiatanUniv />

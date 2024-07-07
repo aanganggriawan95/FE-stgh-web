@@ -1,13 +1,10 @@
-import Navbar from "../Navbar";
-import Footer from "../../Item/footer";
+import LayoutBerita from "../../Layout/Layout_Berita";
 
 const BeritaPage = () => {
   return (
-    <>
-      <Navbar />
-
-      <Footer />
-    </>
+    <LayoutBerita>
+      <h1>Halaman Berita</h1>
+    </LayoutBerita>
   );
 };
 

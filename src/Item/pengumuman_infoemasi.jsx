@@ -1,89 +1,119 @@
-const PengumumanInformasi = () => {
-  return (
-    <section>
-      <div>
-        <div className="bg-yellow-300 w-full">
-          <div className="flex justify-center w-full items-center relative py-14 md:py-20">
-            <span className="w-full h-1 md:h-[2px] bg-white"></span>
-            <h1 className="font-bold absolute text-lg md:text-xl text-center bg-white p-2 border-2 px-4 text-black">
-              PENGUMUMAN & INFORMASI
-            </h1>
-          </div>
-          <div className="pb-4 px-10 md:pb-16 cursor-pointer">
-            <img
-              src="/public/gambar/banner_PMB.jpg"
-              alt=""
-              className=" border-4 border-white "
-            />
-          </div>
-        </div>
-      </div>
-      <div className="w-full border px-5 md:px-10 pb-10">
-        <div className="py-8">
-          <h1 className="text-3xl font-semibold">Mengapa Memilih STHG?</h1>
-        </div>
-        <div className="flex flex-col gap-4 md:gap-0  lg:flex-row lg:gap-4 ">
-          <div className="w-full md:w-full lg:w-[70%] grid grid-cols-1 md:grid-cols-3 gap-3">
-            <a
-              href="#"
-              className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-            >
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Noteworthy technology acquisitions 2021
-              </h5>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
-                Here are the biggest enterprise technology acquisitions of 2021
-                so far, in reverse chronological order.
-              </p>
-            </a>
-            <a
-              href="#"
-              className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-            >
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Noteworthy technology acquisitions 2021
-              </h5>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
-                Here are the biggest enterprise technology acquisitions of 2021
-                so far, in reverse chronological order.
-              </p>
-            </a>
-            <a
-              href="#"
-              className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-            >
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Noteworthy technology acquisitions 2021
-              </h5>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
-                Here are the biggest enterprise technology acquisitions of 2021
-                so far, in reverse chronological order.
-              </p>
-            </a>
-            <a
-              href="#"
-              className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-            >
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Noteworthy technology acquisitions 2021
-              </h5>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
-                Here are the biggest enterprise technology acquisitions of 2021
-                so far, in reverse chronological order.
-              </p>
-            </a>
-          </div>
-          <div className="w-full  lg:w-[30%] md:hidden lg:block lg:h-full">
-            <img
-              src="/public/gambar/unpas_pmb_widget.jpg"
-              alt=""
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+import { useState, useEffect } from "react";
+import { Carousel } from "primereact/carousel";
+import { Pengumuman } from "../Servis/Pengumuman";
+import JudulInformasi from "./judulInformasi";
+import "flowbite";
 
-export default PengumumanInformasi;
+export default function PengumumanInformasi() {
+  const [info, setInfo] = useState([]);
+  const responsiveOptions = [
+    {
+      breakpoint: "1400px",
+      numVisible: 1,
+      numScroll: 1,
+    },
+    {
+      breakpoint: "1199px",
+      numVisible: 1,
+      numScroll: 1,
+    },
+    {
+      breakpoint: "767px",
+      numVisible: 1,
+      numScroll: 1,
+    },
+    {
+      breakpoint: "575px",
+      numVisible: 1,
+      numScroll: 1,
+    },
+  ];
+
+  useEffect(() => {
+    Pengumuman.getPengumuman()
+      .then((data) => setInfo(data))
+      .catch((error) => {
+        console.error("Error fetching staff data:", error);
+      });
+  }, []);
+
+  const productTemplate = (info) => {
+    return (
+      <div className="surface-border text-center h-[600px] relative">
+        <img
+          src={`/public/gambar/banner_PMB.jpg`}
+          alt="Foto Pengumuman"
+          className="shadow-2 absolute w-full z-[-1]"
+        />
+        <div className="flex items-center justify-center h-full w-full">
+          <div className="z-10">
+            <h4 className="mb-1">{info.judul}</h4>
+            <h6 className="mt-0 mb-3">{info.link}</h6>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const customPrevButton = () => (
+    <button className="bg-white hover:bg-blue-700 text-white font-bold py-8 px-4 rounded-full">
+      <svg
+        className="w-6 h-6 text-gray-800 dark:text-white"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="m15 19-7-7 7-7"
+        />
+      </svg>
+    </button>
+  );
+
+  const customNextButton = () => (
+    <button className="bg-white hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+      <svg
+        className="w-6 h-6 text-gray-800 dark:text-white"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="m9 5 7 7-7 7"
+        />
+      </svg>
+    </button>
+  );
+
+  return (
+    <div className="card bg-yellow-300">
+      <JudulInformasi title="Pengumuman Informasi" />
+      <Carousel
+        value={info}
+        numScroll={1}
+        numVisible={3}
+        responsiveOptions={responsiveOptions}
+        itemTemplate={productTemplate}
+        // header={
+        //   <div className="text-center mb-4 text-xl font-bold">{info.judul}</div>
+        // }
+        prevIcon={customPrevButton()}
+        nextIcon={customNextButton()}
+      />
+    </div>
+  );
+}

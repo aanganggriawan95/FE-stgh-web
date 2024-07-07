@@ -31,3 +31,23 @@
 #navbar ul li:hover::after {
   width: 100%;
 }
+
+.company-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.company-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
