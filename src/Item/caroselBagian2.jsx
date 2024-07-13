@@ -50,12 +50,12 @@ export default function CircularDemo() {
             className="shadow-2 rounded-full h-full w-[70%] object-cover"
           />
         </div>
-        <div className="border md:w-1/2 flex items-center justify-center flex-col">
+        <div className=" md:w-1/2 flex items-center justify-center flex-col gap-4">
           <h1 className="mb-1 text-3xl md:text-5xl font-bold">{staf.nama}</h1>
           <h1 className="mt-0 mb-3 text-xl md:text-3xl font-bold">
             {staf.jabatan}
           </h1>
-          <h1 className="mt-0 mb-3 text-xl md:text-3xl font-bold">
+          <h1 className="mt-0 mb-3 text-xl md:text-3xl font-semibold">
             {staf.deskripsi_jabatan}
           </h1>
         </div>

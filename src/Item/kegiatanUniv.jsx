@@ -17,7 +17,7 @@ const KegiatanUniv = () => {
     navigate(`/detailKegiatan/${id}`);
   };
   return (
-    <section className="px-5 md:px-10">
+    <section className="px-5 md:px-16">
       <JudulInformasi title={"KEGIATAN UNIVERSITAS"} />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
         {data.slice(0, 6).map((item, index) => (

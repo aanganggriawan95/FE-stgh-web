@@ -24,7 +24,7 @@ const Berita = ({ item }) => {
   }, []);
 
   return (
-    <section className="px-5 md:px-10">
+    <section className="px-5 md:px-16">
       <JudulInformasi title={"BERITA UNIVERSITAS"} />
       <div className="">
         <div id="berita" className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -32,7 +32,7 @@ const Berita = ({ item }) => {
             <div
               // eslint-disable-next-line react/prop-types
               key={item.id_berita}
-              className="max-w-sm h-60 relative overflow-hidden group"
+              className="max-w-sm h-60 relative overflow-hidden group rounded-md"
             >
               <div>
                 <img

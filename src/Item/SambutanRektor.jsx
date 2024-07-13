@@ -33,10 +33,10 @@ const Sambutan_Rektor = () => {
       {data.map((item, index) => (
         <div key={index}>
           <JudulInformasi title={item.judul} />
-          <div className="bg-slate-900 lg:flex items-center justify-center gap-4 overflow-hidden w-full">
+          <div className="bg-slate-900 lg:flex items-center justify-center gap-4 overflow-hidden w-full md:px-16">
             <div className="w-full">
               <img
-                className="w-full overflow-hidden"
+                className="w-full overflow-hidden object-cover"
                 src={item.foto}
                 alt="Gambar Rektor"
               />

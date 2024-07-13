@@ -20,11 +20,14 @@ const Kerjasama = () => {
     fetchData();
   }, []);
   return (
-    <div className="container mx-auto p-8 bg-gray-100">
+    <div className="container mx-auto p-8 bg-gray-100 md:px-16">
       <JudulInformasi title={"KERJASAMA STHG"} />
-      <div className="flex flex-wrap gap-8 items-center justify-center">
+      <div className="flex flex-wrap gap-8 items-center justify-center pb-10">
         {data.map((company) => (
-          <div key={company.id} className="flex justify-center items-center">
+          <div
+            key={company.id}
+            className="flex justify-center items-center bg-white"
+          >
             <img
               src={company.foto_or_logo}
               alt={company.alt}

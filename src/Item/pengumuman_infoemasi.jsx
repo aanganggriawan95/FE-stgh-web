@@ -39,7 +39,7 @@ export default function PengumumanInformasi() {
 
   const productTemplate = (info) => {
     return (
-      <div className="surface-border text-center h-[600px] relative">
+      <div className="surface-border text-center h-[600px] relative ">
         <img
           src={info.foto}
           alt="Foto Pengumuman"

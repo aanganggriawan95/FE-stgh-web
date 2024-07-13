@@ -2,7 +2,7 @@ import InstagramEmbed from "./embededIg";
 import JudulInformasi from "./judulInformasi";
 const Medsos = () => {
   return (
-    <section className="px-5 md:px-10">
+    <section className="px-5 md:px-16">
       <div>
         <JudulInformasi title={"SOSIAL MEDIA"} />
         <div className="flex flex-col md:flex-row w-full pt-8">

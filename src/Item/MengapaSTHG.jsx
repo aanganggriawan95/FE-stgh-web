@@ -1,6 +1,6 @@
 const MengapaSTHG = () => {
   return (
-    <div className="w-full border px-5 md:px-10 pb-10">
+    <div className="w-full border px-5 md:px-16 pb-10">
       <div className="py-8">
         <h1 className="text-3xl font-semibold">Mengapa Memilih STHG?</h1>
       </div>
