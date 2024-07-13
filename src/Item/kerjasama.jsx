@@ -19,19 +19,20 @@ const Kerjasama = () => {
     };
     fetchData();
   }, []);
+
   return (
-    <div className="container mx-auto p-8 bg-gray-100 md:px-16">
+    <div className="container bg-gray-100 px-5 md:px-16">
       <JudulInformasi title={"KERJASAMA STHG"} />
-      <div className="flex flex-wrap gap-8 items-center justify-center pb-10">
+      <div className="grid grid-cols-2 sm:grid-cols-3 border lg:grid-cols-4 gap-4 items-center justify-center pb-10 w-full">
         {data.map((company) => (
           <div
             key={company.id}
-            className="flex justify-center items-center bg-white"
+            className="flex justify-center items-center bg-white rounded-lg shadow p-4"
           >
             <img
               src={company.foto_or_logo}
               alt={company.alt}
-              className="h-24"
+              className="h-24 object-contain"
             />
           </div>
         ))}

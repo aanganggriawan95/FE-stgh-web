@@ -4,7 +4,6 @@ import axios from "axios";
 
 const Sambutan_Rektor = () => {
   const [data, setData] = useState([]);
-  const [image, setImage] = useState([]);
   console.log(data);
 
   useEffect(() => {
@@ -22,30 +21,23 @@ const Sambutan_Rektor = () => {
     fetchData();
   }, []);
   console.log(data);
-  data.map((item, index) => {
-    console.log("Foto Sambutan :", item.foto);
-    console.log("Kata kata Sambutan :", item.sambutan);
-    console.log("Judul Sambutan :", item.judul);
-  });
 
   return (
     <>
       {data.map((item, index) => (
         <div key={index}>
           <JudulInformasi title={item.judul} />
-          <div className="bg-slate-900 lg:flex items-center justify-center gap-4 overflow-hidden w-full md:px-16">
-            <div className="w-full">
+          <div className="bg-slate-900 h-screen flex flex-col md:flex-row md:h-[500px] border lg:flex items-center justify-center overflow-hidden w-full">
+            <div className="w-full min-h-[50%] md:h-full md:w-full">
               <img
-                className="w-full overflow-hidden object-cover"
+                className="w-full h-full overflow-hidden object-cover"
                 src={item.foto}
                 alt="Gambar Rektor"
               />
             </div>
 
-            <article className="w-full flex flex-col gap-4 justify-center text-white md:py-8">
-              <p className="py-10 text-justify md:pb-0 px-8 text-xl">
-                {item.sambutan}
-              </p>
+            <article className="w-full min-h-[50%] flex flex-col gap-4 justify-center text-white md:py-8">
+              <p className="py-10 text-justify px-6 text-md">{item.sambutan}</p>
             </article>
           </div>
         </div>

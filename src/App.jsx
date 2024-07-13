@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profil/sejarah" element={<Sejarah />} />
-          <Route path="/profil/pasilitas" element={<Pasilitas />} />
+          <Route path="/profil/fasilitas" element={<Pasilitas />} />
           <Route path="/profil/akreditasi" element={<Akreditasi />} />
           <Route path="/studi/sarjana" element={<Sarjana />} />
           <Route path="/studi/master" element={<Master />} />

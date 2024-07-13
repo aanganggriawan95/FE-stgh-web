@@ -42,20 +42,20 @@ export default function CircularDemo() {
 
   const productTemplate = (staf) => {
     return (
-      <div className="border-1 surface-border m-2 text-center py-10 px-3 md:px-0 h-[500px] w-auto md:w-full flex flex-col justify-center md:flex-row ">
-        <div className="mb-3 md:w-1/2 flex items-center justify-center  rounded-lg">
+      <div className="border-1 surface-border h-screen text-center py-10 px-3  w-auto  flex flex-col justify-center md:w-full md:px-0 md:h-[500px] md:flex-row  md:gap-4 md:items-center ">
+        <div className=" h-1/2 flex items-center justify-center  rounded-lg  md:w-1/2 md:h-full">
           <img
             src={staf.foto} // Menggunakan URL gambar dari data staf
             alt={staf.foto}
-            className="shadow-2 rounded-full h-full w-[70%] object-cover"
+            className="shadow-2 shadow-md border-4 border-slate-400 rounded-full h-full w-full object-cover md:h-[90%] "
           />
         </div>
-        <div className=" md:w-1/2 flex items-center justify-center flex-col gap-4">
-          <h1 className="mb-1 text-3xl md:text-5xl font-bold">{staf.nama}</h1>
-          <h1 className="mt-0 mb-3 text-xl md:text-3xl font-bold">
+        <div className="h-1/2 flex items-center justify-center flex-col gap-4 md:gap-2 md:w-1/2 ">
+          <h1 className="mb-1 text-3xl md:text-4xl font-bold">{staf.nama}</h1>
+          <h1 className="mt-0 mb-3 text-xl md:text-2xl font-bold">
             {staf.jabatan}
           </h1>
-          <h1 className="mt-0 mb-3 text-xl md:text-3xl font-semibold">
+          <h1 className="mt-0 mb-3 text-xl md:text-2xl font-semibold">
             {staf.deskripsi_jabatan}
           </h1>
         </div>
