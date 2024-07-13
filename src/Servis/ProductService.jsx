@@ -7,7 +7,7 @@ export const StafService = {
   async getStaf() {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/cms/getStaf",
+        "https://sthg.labtekcmr.com/api/cms/getStaf",
         {
           headers: {
             "Content-Type": "application/json",

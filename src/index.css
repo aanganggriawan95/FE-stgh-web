@@ -51,3 +51,18 @@
   height: 100px;
   object-fit: contain;
 }
+
+.custom-placeholder .p-dropdown-label {
+  color: white !important; /* Mengubah warna placeholder menjadi putih */
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Mengatur padding kiri untuk dropdown item */
+.p-dropdown-item {
+  padding-left: 10px !important; /* Atur sesuai kebutuhan Anda */
+}
+
+.p-dropdown-label {
+  outline: none;
+}

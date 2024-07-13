@@ -2,23 +2,16 @@ import { useEffect, useState } from "react";
 import JudulInformasi from "./judulInformasi";
 import axios from "axios";
 
-const token = "1|Dp7nLbmhWg6H4uS8znZA9ZTYJMfLJs0ERmYPTf1Qad8cee42";
-
 const Sambutan_Rektor = () => {
   const [data, setData] = useState([]);
+  const [image, setImage] = useState([]);
   console.log(data);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/api/cms/getSambutan",
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
-          }
+          "https://sthg.labtekcmr.com/api/cms/getSambutan"
         );
         setData(response.data.data);
       } catch (error) {
@@ -28,6 +21,12 @@ const Sambutan_Rektor = () => {
 
     fetchData();
   }, []);
+  console.log(data);
+  data.map((item, index) => {
+    console.log("Foto Sambutan :", item.foto);
+    console.log("Kata kata Sambutan :", item.sambutan);
+    console.log("Judul Sambutan :", item.judul);
+  });
 
   return (
     <>

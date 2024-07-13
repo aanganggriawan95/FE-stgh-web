@@ -1,71 +1,28 @@
 /* eslint-disable react/prop-types */
-const data = [
-  {
-    id: 1,
-    judul: "Noteworthy technology acquisitions 2021",
-    deskripsi:
-      "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-  {
-    id: 2,
-    judul: "Noteworthy technology acquisitions 2021",
-    deskripsi:
-      "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-  {
-    id: 3,
-    judul: "Noteworthy technology acquisitions 2021",
-    deskripsi:
-      "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-  {
-    id: 4,
-    judul: "Noteworthy technology acquisitions 2021",
-    deskripsi:
-      "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-  {
-    id: 5,
-    judul: "Noteworthy technology acquisitions 2021",
-    deskripsi:
-      "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-  {
-    id: 6,
-    judul: "Noteworthy technology acquisitions 2021",
-    deskripsi:
-      "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-  {
-    id: 7,
-    judul: "Noteworthy technology acquisitions 2021",
-    deskripsi:
-      "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-  {
-    id: 8,
-    judul: "Noteworthy technology acquisitions 2021",
-    deskripsi:
-      "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-  {
-    id: 9,
-    judul: "Noteworthy technology acquisitions 2021",
-    deskripsi:
-      "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-  {
-    id: 10,
-    judul: "Noteworthy technology acquisitions 2021",
-    deskripsi:
-      "The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-];
+
 import { NavLink } from "react-router-dom";
 import JudulInformasi from "./judulInformasi";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 // eslint-disable-next-line react/prop-types
 const Berita = ({ item }) => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          "https://sthg.labtekcmr.com/api/cms/getBerita"
+        );
+        setData(response.data.data);
+        console.log(response.data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getData();
+  }, []);
+
   return (
     <section className="px-5 md:px-10">
       <JudulInformasi title={"BERITA UNIVERSITAS"} />
@@ -74,12 +31,12 @@ const Berita = ({ item }) => {
           {(item ? data.slice(0, 6) : data).map((item) => (
             <div
               // eslint-disable-next-line react/prop-types
-              key={item.id}
+              key={item.id_berita}
               className="max-w-sm h-60 relative overflow-hidden group"
             >
               <div>
                 <img
-                  src="https://images.unsplash.com/photo-1715606785663-3fa3a08aadec?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src={item.foto}
                   alt=""
                   className="h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-300 "
                 />

@@ -41,14 +41,14 @@ export default function PengumumanInformasi() {
     return (
       <div className="surface-border text-center h-[600px] relative">
         <img
-          src={`/public/gambar/banner_PMB.jpg`}
+          src={info.foto}
           alt="Foto Pengumuman"
           className="shadow-2 absolute w-full z-[-1]"
         />
         <div className="flex items-center justify-center h-full w-full">
           <div className="z-10">
-            <h4 className="mb-1">{info.judul}</h4>
-            <h6 className="mt-0 mb-3">{info.link}</h6>
+            <h4 className="mb-1 text-white">{info.judul}</h4>
+            <h6 className="mt-0 mb-3 text-white">{info.link}</h6>
           </div>
         </div>
       </div>

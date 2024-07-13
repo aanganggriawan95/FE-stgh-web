@@ -45,8 +45,8 @@ export default function CircularDemo() {
       <div className="border-1 surface-border m-2 text-center py-10 px-3 md:px-0 h-[500px] w-auto md:w-full flex flex-col justify-center md:flex-row ">
         <div className="mb-3 md:w-1/2 flex items-center justify-center  rounded-lg">
           <img
-            src={"/gambar/staf.jpeg"} // Menggunakan URL gambar dari data staf
-            alt={staf.nama}
+            src={staf.foto} // Menggunakan URL gambar dari data staf
+            alt={staf.foto}
             className="shadow-2 rounded-full h-full w-[70%] object-cover"
           />
         </div>

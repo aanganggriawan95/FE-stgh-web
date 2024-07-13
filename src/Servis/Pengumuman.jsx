@@ -4,7 +4,7 @@ export const Pengumuman = {
   async getInfo() {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/cms/getPengumuman",
+        "https://sthg.labtekcmr.com/api/cms/getPengumuman",
         {
           headers: {
             "Content-Type": "application/json",

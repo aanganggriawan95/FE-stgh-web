@@ -8,7 +8,7 @@ const KegiatanAPI = {
   async getKegiatan() {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/cms/getKegiatan",
+        "https://sthg.labtekcmr.com/api/cms/getKegiatan",
         {
           headers: {
             "Content-Type": "application/json",
