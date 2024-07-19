@@ -3,6 +3,7 @@ import Navbar from "../../Navbar";
 import Footer from "../../../Item/footer";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Jumbotron from "../../../Item/jumbotron";
 
 export default function VisiMisi() {
   const [data, setData] = useState([]);
@@ -25,8 +26,9 @@ export default function VisiMisi() {
   return (
     <div className="">
       <Navbar />
+      <Jumbotron judul="Visi dan Misi" />
 
-      <section className="bg-white text-black pt-[150px]">
+      <section className="bg-white text-black ">
         <nav
           className="flex py-6 px-6 md:px-16  md:border-b shadow-md md:shadow-none"
           aria-label="Breadcrumb"

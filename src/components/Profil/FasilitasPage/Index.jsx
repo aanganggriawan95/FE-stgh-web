@@ -3,6 +3,7 @@ import Footer from "../../../Item/footer";
 import "flowbite";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Jumbotron from "../../../Item/jumbotron";
 
 const Pasilitas = () => {
   const [data, setData] = useState([]);
@@ -24,17 +25,7 @@ const Pasilitas = () => {
   return (
     <div className="font-sans">
       <Navbar />
-      <section className="relative  mt-[80px] bg-[url(/gambar/aula.jpg)] bg-cover bg-center bg-no-repeat">
-        <div className="absolute inset-0 bg-gray-900/75  ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
-
-        <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 md:flex lg:h-screen md:items-center md:px-8">
-          <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
-            <h1 className="text-3xl font-bold uppercase text-white sm:text-3xl border-l-4 border-red-700 bg-yellow-400 p-2 px-4">
-              Fasilitas
-            </h1>
-          </div>
-        </div>
-      </section>
+      <Jumbotron judul="Fasilitas" />
       <nav
         className="flex py-6 px-6 md:px-16  md:border-b shadow-md md:shadow-none"
         aria-label="Breadcrumb"

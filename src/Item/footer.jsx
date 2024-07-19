@@ -27,15 +27,13 @@ const SITEMAP = [
   },
 ];
 
-const currentYear = new Date().getFullYear();
-
 const Footer = () => {
   return (
-    <footer className="bg-white">
+    <footer className="bg-gray-900">
       <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
-            <div className="flex justify-center text-teal-600 sm:justify-start">
+            <div className="flex justify-center text-white sm:justify-start">
               <svg
                 className="h-8"
                 viewBox="0 0 118 24"
@@ -85,7 +83,7 @@ const Footer = () => {
               </svg>
             </div>
 
-            <p className="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
+            <p className="mt-6 max-w-md text-center leading-relaxed text-white sm:max-w-xs sm:text-left">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
               consequuntur amet culpa cum itaque neque.
             </p>
@@ -96,7 +94,7 @@ const Footer = () => {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-teal-700 transition hover:text-teal-700/75"
+                  className="text-white transition hover:text-white/75"
                 >
                   <span className="sr-only">Facebook</span>
                   <svg
@@ -119,7 +117,7 @@ const Footer = () => {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-teal-700 transition hover:text-teal-700/75"
+                  className="text-white transition hover:text-white/75"
                 >
                   <span className="sr-only">Instagram</span>
                   <svg
@@ -142,7 +140,7 @@ const Footer = () => {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-teal-700 transition hover:text-teal-700/75"
+                  className="text-white transition hover:text-white/75"
                 >
                   <span className="sr-only">Twitter</span>
                   <svg
@@ -161,7 +159,7 @@ const Footer = () => {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-teal-700 transition hover:text-teal-700/75"
+                  className="text-white transition hover:text-white/75"
                 >
                   <span className="sr-only">GitHub</span>
                   <svg
@@ -184,7 +182,7 @@ const Footer = () => {
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-teal-700 transition hover:text-teal-700/75"
+                  className="text-white transition hover:text-white/75"
                 >
                   <span className="sr-only">Dribbble</span>
                   <svg
@@ -211,7 +209,7 @@ const Footer = () => {
               <ul className="mt-8 space-y-4 text-sm">
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-white/75"
                     href="#"
                   >
                     Company History
@@ -220,7 +218,7 @@ const Footer = () => {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-white/75"
                     href="#"
                   >
                     Meet the Team
@@ -229,7 +227,7 @@ const Footer = () => {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-white/75"
                     href="#"
                   >
                     Employee Handbook
@@ -238,7 +236,7 @@ const Footer = () => {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-white/75"
                     href="#"
                   >
                     {" "}
@@ -254,7 +252,7 @@ const Footer = () => {
               <ul className="mt-8 space-y-4 text-sm">
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-white/75"
                     href="#"
                   >
                     Web Development
@@ -263,7 +261,7 @@ const Footer = () => {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-white/75"
                     href="#"
                   >
                     {" "}
@@ -273,7 +271,7 @@ const Footer = () => {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-white/75"
                     href="#"
                   >
                     {" "}
@@ -283,7 +281,7 @@ const Footer = () => {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-white/75"
                     href="#"
                   >
                     {" "}
@@ -299,7 +297,7 @@ const Footer = () => {
               <ul className="mt-8 space-y-4 text-sm">
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-white/75"
                     href="#"
                   >
                     {" "}
@@ -309,7 +307,7 @@ const Footer = () => {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-white/75"
                     href="#"
                   >
                     {" "}
@@ -322,7 +320,7 @@ const Footer = () => {
                     className="group flex justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
                     href="#"
                   >
-                    <span className="text-gray-700 transition group-hover:text-gray-700/75">
+                    <span className="text-white transition group-hover:text-white/75">
                       Live Chat
                     </span>
 
@@ -359,7 +357,7 @@ const Footer = () => {
                       />
                     </svg>
 
-                    <span className="flex-1 text-gray-700">john@doe.com</span>
+                    <span className="flex-1 text-white">john@doe.com</span>
                   </a>
                 </li>
 
@@ -383,7 +381,7 @@ const Footer = () => {
                       />
                     </svg>
 
-                    <span className="flex-1 text-gray-700">0123456789</span>
+                    <span className="flex-1 text-white">0123456789</span>
                   </a>
                 </li>
 
@@ -408,7 +406,7 @@ const Footer = () => {
                     />
                   </svg>
 
-                  <address className="-mt-0.5 flex-1 not-italic text-gray-700">
+                  <address className="-mt-0.5 flex-1 not-italic text-white">
                     213 Lane, London, United Kingdom
                   </address>
                 </li>
@@ -419,7 +417,7 @@ const Footer = () => {
 
         <div className="mt-12 border-t border-gray-100 pt-6">
           <div className="text-center sm:flex sm:justify-between sm:text-left">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-white">
               <span className="block sm:inline">All rights reserved.</span>
 
               <a
@@ -439,7 +437,7 @@ const Footer = () => {
               </a>
             </p>
 
-            <p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">
+            <p className="mt-4 text-sm text-white sm:order-first sm:mt-0">
               &copy; 2022 Company Name
             </p>
           </div>
@@ -481,7 +479,7 @@ export default Footer;
 //                   href="#"
 //                   rel="noreferrer"
 //                   target="_blank"
-//                   className="text-white transition hover:text-teal-700/75"
+//                   className="text-white transition hover:text-white/75"
 //                 >
 //                   <span className="sr-only">Facebook</span>
 //                   <svg
@@ -504,7 +502,7 @@ export default Footer;
 //                   href="#"
 //                   rel="noreferrer"
 //                   target="_blank"
-//                   className="text-white transition hover:text-teal-700/75"
+//                   className="text-white transition hover:text-white/75"
 //                 >
 //                   <span className="sr-only">Instagram</span>
 //                   <svg
@@ -527,7 +525,7 @@ export default Footer;
 //                   href="#"
 //                   rel="noreferrer"
 //                   target="_blank"
-//                   className="text-white transition hover:text-teal-700/75"
+//                   className="text-white transition hover:text-white/75"
 //                 >
 //                   <span className="sr-only">Twitter</span>
 //                   <svg
@@ -546,7 +544,7 @@ export default Footer;
 //                   href="#"
 //                   rel="noreferrer"
 //                   target="_blank"
-//                   className="text-white transition hover:text-teal-700/75"
+//                   className="text-white transition hover:text-white/75"
 //                 >
 //                   <span className="sr-only">GitHub</span>
 //                   <svg
@@ -569,7 +567,7 @@ export default Footer;
 //                   href="#"
 //                   rel="noreferrer"
 //                   target="_blank"
-//                   className="text-white hover:text-teal-700/75"
+//                   className="text-white hover:text-white/75"
 //                 >
 //                   <span className="sr-only">Dribbble</span>
 //                   <svg
@@ -698,7 +696,7 @@ export default Footer;
 
 //         <div className="bg-gradient-to-r  from-red-700 to-black  py-6 px-10  absolute w-full start-0 ">
 //           <div className="text-center sm:flex sm:justify-between sm:text-left">
-//             <p className="text-sm text-gray-500">
+//             <p className="text-sm text-white">
 //               <span className="block sm:inline text-white">
 //                 All rights reserved.
 //               </span>

@@ -4,12 +4,12 @@ import "animate.css";
 const Jumbotron = ({ judul }) => {
   // [url(https://th.bing.com/th/id/OIP.4SbBivsVsWAUoF8wl2ij_QHaEK?rs=1&pid=ImgDetMain)]
   return (
-    <section className="relative md:mt-20 bg-black bg-cover bg-center bg-no-repeat">
-      <div className="absolute inset-0 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
+    <section className="relative mt-[65px] md:mt-[80px] lg:mt-[120px] bg-[url(/gambar/hukum-bg.jpg)] bg-cover bg-center bg-no-repeat">
+      <div className="absolute inset-0 bg-gray-900/75  ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
 
-      <div className="relative mx-auto max-w-screen-xl px-4 py-32 flex justify-center sm:px-6 lg:flex lg:h-[400px] lg:items-center lg:px-8">
+      <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 flex lg:h-1/2 items-center md:px-8">
         <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
-          <h1 className="text-3xl font-sans uppercase text-white font-extrabold sm:text-5xl animate__animated animate__fadeInLeft">
+          <h1 className="text-xl md:text-3xl font-bold text-white sm:text-3xl border-l-4 border-red-700 bg-yellow-400 p-2 px-4">
             {judul}
           </h1>
         </div>

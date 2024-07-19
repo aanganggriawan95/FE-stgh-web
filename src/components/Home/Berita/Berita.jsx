@@ -30,7 +30,7 @@ export function BeritaSTHG() {
   console.log(berita);
   return (
     <div className="w-full">
-      <JudulInformasi title={"Kegiatan STHG"} />
+      <JudulInformasi title={"Berita STHG"} />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {berita.map((berita, key) => (
           <a key={key} href="">
