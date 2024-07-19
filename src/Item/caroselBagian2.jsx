@@ -1,126 +1,142 @@
 import "flowbite";
 import "animate.css";
-import { useState, useEffect } from "react";
-
-import { Carousel } from "primereact/carousel";
-
-import { StafService } from "../Servis/ProductService";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function CircularDemo() {
-  const [staf, setStaf] = useState([]);
-  const responsiveOptions = [
-    {
-      breakpoint: "1400px",
-      numVisible: 1,
-      numScroll: 1,
-    },
-    {
-      breakpoint: "1199px",
-      numVisible: 1,
-      numScroll: 1,
-    },
-    {
-      breakpoint: "767px",
-      numVisible: 1,
-      numScroll: 1,
-    },
-    {
-      breakpoint: "575px",
-      numVisible: 1,
-      numScroll: 1,
-    },
-  ];
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    StafService.getStafSmall()
-      .then((data) => setStaf(data))
-      .catch((error) => {
-        console.error("Error fetching staff data:", error);
-        // Anda bisa menambahkan logika untuk menampilkan pesan kesalahan kepada pengguna
-      });
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://sthg.labtekcmr.com/api/cms/getStaf"
+        );
+        setData(response.data.data);
+        console.log(response.data.data);
+      } catch (error) {
+        console.error("Gagal mengambil detail carousel:", error.message);
+      }
+    };
+    fetchData();
   }, []);
-
-  const productTemplate = (staf) => {
-    return (
-      <div className="border-1 surface-border h-screen text-center py-10 px-3  w-auto  flex flex-col justify-center md:w-full md:px-0 md:h-[500px] md:flex-row  md:gap-4 md:items-center ">
-        <div className=" h-1/2 flex items-center justify-center  rounded-lg  md:w-1/2 md:h-full">
-          <img
-            src={staf.foto} // Menggunakan URL gambar dari data staf
-            alt={staf.foto}
-            className="shadow-2 shadow-md border-4 border-slate-400 rounded-full h-full w-full object-cover md:h-[90%] "
-          />
-        </div>
-        <div className="h-1/2 flex items-center justify-center flex-col gap-4 md:gap-2 md:w-1/2 ">
-          <h1 className="mb-1 text-3xl md:text-4xl font-bold">{staf.nama}</h1>
-          <h1 className="mt-0 mb-3 text-xl md:text-2xl font-bold">
-            {staf.jabatan}
-          </h1>
-          <h1 className="mt-0 mb-3 text-xl md:text-2xl font-semibold">
-            {staf.deskripsi_jabatan}
-          </h1>
-        </div>
-      </div>
-    );
-  };
-
-  const customPrevButton = () => (
-    <button className="bg-sky-600 hover:bg-blue-700 text-white font-bold py-8 px-4 rounded-full">
-      <svg
-        className="w-6 h-6 text-gray-800 dark:text-white"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="m15 19-7-7 7-7"
-        />
-      </svg>
-    </button>
-  );
-
-  const customNextButton = () => (
-    <button className="bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-      <svg
-        className="w-6 h-6 text-gray-800 dark:text-white"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="m9 5 7 7-7 7"
-        />
-      </svg>
-    </button>
-  );
-
   return (
-    <div className="card">
-      <Carousel
-        value={staf}
-        numVisible={1}
-        numScroll={1}
-        responsiveOptions={responsiveOptions}
-        className="custom-carousel"
-        circular
-        autoplayInterval={3000}
-        itemTemplate={productTemplate}
-        prevIcon={customPrevButton()}
-        nextIcon={customNextButton()}
-      />
+    <div
+      id="default-carousel"
+      className="relative w-full"
+      data-carousel="slide"
+    >
+      {/* <!-- Carousel wrapper --> */}
+      <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+        {/* <!-- Item 1 --> */}
+        {data.map((item, index) => (
+          <div
+            key={index}
+            className="hidden duration-700 ease-in-out"
+            data-carousel-item
+          >
+            <div className="flex justify-between h-full border">
+              <img
+                src={item.foto}
+                className=" block w-1/2 rounded-full h-full  "
+                alt="..."
+              />
+              <div className="bg-pink-200 w-1/2">
+                <p className="text-3xl font-semibold text-black">{item.nama}</p>
+                <p className="text-black">{item.jabatan}</p>
+                <p className="text-black">{item.deskripsi_jabatan}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* <!-- Slider indicators --> */}
+      <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button
+          type="button"
+          className="w-3 h-3 rounded-full"
+          aria-current="true"
+          aria-label="Slide 1"
+          data-carousel-slide-to="0"
+        ></button>
+        <button
+          type="button"
+          className="w-3 h-3 rounded-full"
+          aria-current="false"
+          aria-label="Slide 2"
+          data-carousel-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          className="w-3 h-3 rounded-full"
+          aria-current="false"
+          aria-label="Slide 3"
+          data-carousel-slide-to="2"
+        ></button>
+        <button
+          type="button"
+          className="w-3 h-3 rounded-full"
+          aria-current="false"
+          aria-label="Slide 4"
+          data-carousel-slide-to="3"
+        ></button>
+        <button
+          type="button"
+          className="w-3 h-3 rounded-full"
+          aria-current="false"
+          aria-label="Slide 5"
+          data-carousel-slide-to="4"
+        ></button>
+      </div>
+      {/* <!-- Slider controls --> */}
+      <button
+        type="button"
+        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev
+      >
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg
+            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 1 1 5l4 4"
+            />
+          </svg>
+          <span className="sr-only">Previous</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next
+      >
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg
+            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"
+            />
+          </svg>
+          <span className="sr-only">Next</span>
+        </span>
+      </button>
     </div>
   );
 }

@@ -21,9 +21,9 @@ const Kerjasama = () => {
   }, []);
 
   return (
-    <div className="container bg-gray-100 px-5 md:px-16">
+    <div className=" bg-gray-100 px-5 md:px-10 min-h-screen">
       <JudulInformasi title={"KERJASAMA STHG"} />
-      <div className="grid grid-cols-2 sm:grid-cols-3 border lg:grid-cols-4 gap-4 items-center justify-center pb-10 w-full">
+      <div className="grid grid-cols-2 sm:grid-cols-3  lg:grid-cols-4 gap-4 items-center justify-center pb-10 w-full">
         {data.map((company) => (
           <div
             key={company.id}

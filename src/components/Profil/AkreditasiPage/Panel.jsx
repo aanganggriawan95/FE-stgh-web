@@ -4,7 +4,7 @@ import { Panel } from "primereact/panel";
 export default function PanelAkreditasiKampus() {
   const ref = useRef(null);
   return (
-    <div className="md:mx-10">
+    <div className="md:mx-16">
       <Panel
         ref={ref}
         header="Akreditasi Kampus"

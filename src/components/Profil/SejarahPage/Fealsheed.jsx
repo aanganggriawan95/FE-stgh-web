@@ -2,11 +2,7 @@ import { Fieldset } from "primereact/fieldset";
 
 export default function FieldsetContent() {
   return (
-    <Fieldset
-      legend="Sejarah STHG"
-      className="border mx-10 font-sans"
-      toggleable
-    >
+    <Fieldset legend="Sejarah STHG" className=" mx-10 font-sans" toggleable>
       <p className="mb-2 text-gray-500 dark:text-gray-400 text-justify font-sans">
         Sekolah Tinggi Hukum Galunggung (STHG) Tasikmalaya didirikan pada tahun
         1974 dan merupakan salah satu perguruan tinggi tertua di wilayah

@@ -1,27 +1,8 @@
 import "animate.css";
-import { useState } from "react";
-import Home from "./Home";
-import Profile from "./Profile";
-import { ProgramStudi } from "./ProgramStudi";
-import PMB from "./PMB";
-import Akademik from "./Akademik";
+
 import SideBar from "../../Item/Sidebar/Index";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const Click = () => {
-    setIsOpen(!isOpen);
-    const content = document.getElementById("blackspot");
-    content.classList.toggle("hidden");
-  };
-
-  // const ClickDropDown = () => {
-  //   const dropdownMenu = document.getElementById("dropdownMenu");
-  //   dropdownMenu.classList.toggle("hidden");
-  //   dropdownMenu.classList.toggle("animate__fadeInDown");
-  // };
-
   window.addEventListener("scroll", function () {
     const navbar1 = document.getElementById("navbar1");
     const navbar2 = document.getElementById("navbar2");
@@ -41,7 +22,7 @@ const Navbar = () => {
   });
 
   return (
-    <nav className="top-0 font-sans dark:bg-gray-900 fixed w-full z-50 transition-transform animate__animated animate__fadeInDown">
+    <nav className="top-0 font-sans dark:bg-gray-900 fixed w-full z-[9999] transition-transform animate__animated animate__fadeInDown">
       {/* Hide */}
       <div
         id="blackspot"
@@ -49,7 +30,7 @@ const Navbar = () => {
       ></div>
       <div
         id="navbar1"
-        className=" hidden lg:flex w-full bg-slate-900 px-10 justify-between items-center h-14 transition-all duration-300 ease-in-out"
+        className=" hidden lg:flex w-full bg-black px-10 justify-between items-center h-14 transition-all duration-300 ease-in-out"
       >
         <div className="flex gap-6 py-3 text-sm">
           <span className="text-yellow-300 flex">
@@ -168,7 +149,7 @@ const Navbar = () => {
       </div>
       <div
         id="navbar2"
-        className="w-full h-20 flex  items-center transition-all duration-300 ease-in-out justify-between mx-auto  bg-gradient-to-r from-slate-900 to-red-700 md:text-sm lg:px-10"
+        className="w-full h-20 flex  items-center transition-all duration-300 ease-in-out justify-between mx-auto  bg-gradient-to-r from-neutral-900 to-red-700 md:text-sm lg:px-10"
       >
         <div className="w-full flex justify-between items-center px-4">
           <div className=" flex items-center gap-2 ">
@@ -180,22 +161,105 @@ const Navbar = () => {
             <SideBar />
           </div>
         </div>
-        <div className="hidden lg:flex items-center  gap-4 w-full">
-          <ul className="flex gap-4 items-center justify-center uppercase text-white w-full">
+        <div className="hidden lg:flex items-center  gap-4 w-full  h-full">
+          <ul className="flex gap-4 items-center justify-center uppercase text-white w-full  h-full ">
             <li>
               <a href="/">Home</a>
             </li>
-            <li>
-              <Profile />
+            <li className="dropdown dropdown-hover h-full flex items-center">
+              <div className="">
+                <div tabIndex={0} role="button" className="m-1 uppercase">
+                  PROFILE
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu bg-base-100 rounded-md z-[1] w-52 p-2 shadow top-[100%]"
+                >
+                  <li className="">
+                    <a href="/profil/visi&misi" className="text-black">
+                      Visi & Misi
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/profil/sejarah" className="text-black">
+                      Tentang STHG
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/profil/fasilitas" className="text-black">
+                      Fasilitas
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/profil/akreditasi" className="text-black">
+                      Akreditasi
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
-            <li className="">
-              <ProgramStudi />
+            <li className="dropdown dropdown-hover  h-full flex items-center">
+              <div className="">
+                <div tabIndex={0} role="button" className="w-full uppercase ">
+                  Program studi
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content  menu bg-base-100 rounded-md z-[1] w-52 p-2 shadow top-[100%]"
+                >
+                  <li>
+                    <a href="/studi/sarjana" className="text-black">
+                      Sarjana Hukum
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/studi/master" className="text-black">
+                      Master Hukum
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li className="">
               <a href="">PMB</a>
             </li>
-            <li className="">
-              <Akademik />
+            <li className="dropdown dropdown-hover  h-full flex items-center">
+              <div className="">
+                <div tabIndex={0} role="button" className=" m-1 uppercase">
+                  Akademik
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu bg-base-100 rounded-md z-[1] w-52 p-2 shadow top-[100%]"
+                >
+                  <li>
+                    <a
+                      href="https://pustaka.sthg.ac.id/"
+                      className="text-black"
+                    >
+                      Perpustakaan
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://siakadbjbs.sthg.ac.id/"
+                      className="text-black"
+                    >
+                      Siakad
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" className="text-black">
+                      Peraktik Peradilan Lapangan
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" className="text-black">
+                      Tata Cara Pembayaran
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li>
               <a href="/kontak">Kontak</a>

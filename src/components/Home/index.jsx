@@ -1,30 +1,35 @@
 import Navbar from "../Navbar";
 import Carousel from "../../Item/Carousel";
-import Sambutan_Rektor from "../../Item/SambutanRektor";
-import CircularDemo from "../../Item/caroselBagian2";
-import PengumumanInformasi from "../../Item/pengumuman_infoemasi";
-import Berita from "../../Item/Berita";
-import KegiatanUniv from "../../Item/kegiatanUniv";
+
 import Medsos from "../../Item/medsos";
 import Kerjasama from "../../Item/kerjasama";
 import Footer from "../../Item/footer";
-import MengapaSTHG from "../../Item/MengapaSTHG";
+import MengapaSTHG from "./KenapaSTHG/MengapaSTHG";
+import { CaroselStaf } from "./Staf/Carosel";
+import Smabutan from "./Sambutan/Sambutan";
+import { Pengmuman } from "./Pengumuman/Pengumuman";
+import { BeritaSTHG } from "./Berita/Berita";
+import { KegiatanSTHG } from "./Kegiatan/Kegiatan";
+
+// import { CarouselDefault } from "./Carosel";
 const Home = () => {
   return (
     <div className="font-sans">
       <Navbar />
       <Carousel />
-      <Sambutan_Rektor />
-      <div className="bg-white">
-        <CircularDemo />
+      <Smabutan />
+      <div className="bg-custom-image bg-cover bg-center md:h-[600px] flex items-center py-10">
+        <CaroselStaf />
       </div>
 
-      <PengumumanInformasi />
+      <Pengmuman />
 
       <MengapaSTHG />
-      <Berita item={true} />
-      <div className="bg-slate-100">
-        <KegiatanUniv />
+      <div className="px-4 md:px-10 bg-[#f3f4f6] flex justify-center items-center pb-10">
+        <BeritaSTHG />
+      </div>
+      <div className="px-4 md:px-10 bg-[#f3f4f6] flex justify-center items-center pb-10">
+        <KegiatanSTHG />
       </div>
       <Medsos />
       <div className="bg-slate-100">

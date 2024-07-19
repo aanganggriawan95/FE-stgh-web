@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+export default withMT({
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -25,8 +27,11 @@ export default {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
       },
+      backgroundImage: {
+        "custom-image": "url('/gambar/bg-staf.jpg')",
+      },
     },
   },
   // eslint-disable-next-line no-undef
   plugins: [require("flowbite/plugin"), require("daisyui")],
-};
+});

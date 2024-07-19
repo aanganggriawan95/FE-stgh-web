@@ -1,17 +1,17 @@
-import Navbar from "../Navbar";
-import Footer from "../../Item/footer";
-import Jumbotron from "../../Item/jumbotron";
-import BasicDemo from "./item/Stepper";
-import JumbotronKaprodi from "./item/JumbotronKaprodi";
-import Prospek from "./item/Prospek";
-import Kegiatan from "./item/KegiatanProdi";
+import Navbar from "../../Navbar";
+import Footer from "../../../Item/footer";
+import JumbotronKaprodi from "./JumbotronKaprodi";
+import Jumbotron from "../../../Item/jumbotron";
+import Prospek from "./Prospek";
+import Kegiatan from "./KegiatanProdi";
 
 // eslint-disable-next-line react/prop-types
-export const Layaout = ({ title }) => {
+export const Layaout = () => {
   return (
     <div>
       <Navbar />
-      <Jumbotron judul={title} img={"/gambar/hukum.jpeg"} />
+      <Jumbotron judul={"PROGRAM STUDI MASTER HUKUM"} />
+
       <div className="flex justify-center py-4 bg-gradient-to-r from-slate-900 to-red-700">
         <a
           href="#"
@@ -69,29 +69,8 @@ export const Layaout = ({ title }) => {
             vitae architecto quasi voluptates commodi ex praesentium eligendi
             consectetur distinctio ullam! Quaerat a consequuntur minus at.
           </p>
-          <div className="flex flex-col gap-12 md:gap-0 md:flex-row  justify-between py-12 md:py-24">
-            <div className="flex flex-col items-center justify-center gap-2">
-              <span className="text-7xl text-green-500 font-bold">97%</span>
-              <span className="text-xl font-bold">
-                Lulusan / Wisuda per Tahun
-              </span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2">
-              <span className="text-7xl text-green-500 font-bold">+1500</span>
-
-              <span className="text-xl font-bold">Penerimaan Mahasiswa</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2">
-              <span className="text-7xl text-green-500 font-bold">62%</span>
-
-              <span className="text-xl font-bold">
-                Berkarir di Pemerintahan
-              </span>
-            </div>
-          </div>
         </div>
       </div>
-      <BasicDemo />
       <JumbotronKaprodi />
       <Prospek />
       <Kegiatan />

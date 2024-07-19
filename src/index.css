@@ -66,3 +66,13 @@
 .p-dropdown-label {
   outline: none;
 }
+
+.splide__slide img {
+  width: 100%;
+  height: auto;
+}
+
+.splide__arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
