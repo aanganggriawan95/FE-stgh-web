@@ -9,7 +9,7 @@ const Jumbotron = ({ judul }) => {
 
       <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 flex lg:h-1/2 items-center md:px-8">
         <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
-          <h1 className="text-xl md:text-3xl font-bold text-white sm:text-3xl border-l-4 border-red-700 bg-yellow-400 p-2 px-4">
+          <h1 className="text-xl animate__animated animate__fadeInLeft md:text-3xl font-bold text-white sm:text-3xl border-l-4 border-red-700 bg-yellow-400 p-2 px-4">
             {judul}
           </h1>
         </div>

@@ -202,7 +202,10 @@ const Sarjana = () => {
           <section className="bg-gray-900 text-white">
             <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-16 lg:py-16">
               <div className="">
-                <h2 className="text-3xl font-bold sm:text-4xl">
+                <h2
+                  className="text-3xl font-bold sm:text-4xl delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0"
+                  data-taos-offset="300"
+                >
                   Program Studi Ilmu Hukum
                 </h2>
 
